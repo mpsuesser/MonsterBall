@@ -652,7 +652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37570872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.5, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1231,9 +1231,9 @@ GameObject:
   - component: {fileID: 137114125}
   - component: {fileID: 137114124}
   - component: {fileID: 137114123}
-  m_Layer: 12
+  m_Layer: 20
   m_Name: BackS
-  m_TagString: Field
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1929,7 +1929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 270094923}
-  m_Layer: 9
+  m_Layer: 20
   m_Name: Endzones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3179,7 +3179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 405653831}
-  m_Layer: 9
+  m_Layer: 20
   m_Name: OutOfBounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3283,9 +3283,9 @@ GameObject:
   - component: {fileID: 430423444}
   - component: {fileID: 430423443}
   - component: {fileID: 430423442}
-  m_Layer: 12
+  m_Layer: 20
   m_Name: EndzoneS
-  m_TagString: Field
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3479,7 +3479,7 @@ GameObject:
   - component: {fileID: 493073940}
   m_Layer: 9
   m_Name: BackNTrigger
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6578,7 +6578,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 889748768}
-  m_Layer: 9
+  m_Layer: 20
   m_Name: Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6817,7 +6817,7 @@ GameObject:
   - component: {fileID: 918547920}
   m_Layer: 9
   m_Name: BackSTrigger
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7376,9 +7376,9 @@ GameObject:
   - component: {fileID: 986126512}
   - component: {fileID: 986126511}
   - component: {fileID: 986126510}
-  m_Layer: 12
+  m_Layer: 20
   m_Name: BackN
-  m_TagString: Field
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7560,7 +7560,7 @@ GameObject:
   - component: {fileID: 1011223892}
   m_Layer: 9
   m_Name: LeftTrigger
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7955,7 +7955,7 @@ GameObject:
   - component: {fileID: 1080216407}
   m_Layer: 9
   m_Name: EndzoneTriggerN
-  m_TagString: Endzone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -8553,9 +8553,9 @@ GameObject:
   - component: {fileID: 1218213815}
   - component: {fileID: 1218213814}
   - component: {fileID: 1218213813}
-  m_Layer: 12
+  m_Layer: 20
   m_Name: EndzoneN
-  m_TagString: Field
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -8749,7 +8749,7 @@ GameObject:
   - component: {fileID: 1319292100}
   m_Layer: 9
   m_Name: RightTrigger
-  m_TagString: OutOfBounds
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9063,9 +9063,9 @@ GameObject:
   - component: {fileID: 1343855011}
   - component: {fileID: 1343855010}
   - component: {fileID: 1343855009}
-  m_Layer: 12
+  m_Layer: 20
   m_Name: Right
-  m_TagString: Field
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9161,7 +9161,7 @@ GameObject:
   - component: {fileID: 1353891938}
   m_Layer: 9
   m_Name: EndzoneTriggerS
-  m_TagString: Endzone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -10936,9 +10936,9 @@ GameObject:
   - component: {fileID: 1597344891}
   - component: {fileID: 1597344890}
   - component: {fileID: 1597344889}
-  m_Layer: 12
+  m_Layer: 20
   m_Name: Left
-  m_TagString: Field
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -11836,9 +11836,9 @@ GameObject:
   - component: {fileID: 1782148092}
   - component: {fileID: 1782148091}
   - component: {fileID: 1782148090}
-  m_Layer: 12
+  m_Layer: 20
   m_Name: PlayingField
-  m_TagString: Field
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

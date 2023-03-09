@@ -6,14 +6,35 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Preload.unity
-    guid: 57df3bc01e274744c8948a5ce433df7f
+    path: Assets/Scenes/SharedPreload.unity
+    guid: 35d30221ab197ab45838997fbe8c66a3
   - enabled: 1
-    path: Assets/tempMiddleman.unity
+    path: Assets/Scenes/ClientStartupPreload.unity
+    guid: a2c1f8fc2c0d14d47af0dc8e97e7c78c
+  - enabled: 1
+    path: Assets/Scenes/ServerStartupPreload.unity
+    guid: 12fb2010c14847743a6083dd40aa48b1
+  - enabled: 1
+    path: Assets/Scenes/tempMiddleman.unity
     guid: e22b03b1dfb79764abf5b6fd5395ba20
+  - enabled: 1
+    path: Assets/Scenes/ClientNetworking.unity
+    guid: f78ae0df0a8630c4396264fdc0baaaf6
+  - enabled: 1
+    path: Assets/Scenes/ServerNetworking.unity
+    guid: 4f9a4928ecc5631469b40c87ebb1656b
   - enabled: 1
     path: Assets/Scenes/Field.unity
     guid: 7753381e8f3bac64abb98160d9827a39
+  - enabled: 1
+    path: Assets/Scenes/ClientInGame.unity
+    guid: 3f888da0a391b7c489249660afca3f72
+  - enabled: 1
+    path: Assets/Scenes/ServerInGame.unity
+    guid: 78aa8ec911ce2b3478d99db58630fa5d
+  - enabled: 1
+    path: Assets/Scenes/ClientUI.unity
+    guid: cb5a1d971244cef458dc8a959d5a9683
   - enabled: 1
     path: Assets/Scenes/Working.unity
     guid: 5270612600681b847a87f0c371975c58
