@@ -29,8 +29,9 @@ namespace MonsterBall.Server
         
         private static void PublishActivePlayStateChanged(PlayState playState)
         {
-            // TODO: Implement
-            Logger.Log("TODO: Publish active play state change from server to client");
+            Message message =
+                RiptideMessagePacker.PackStcPlayStateUpdated(playState);
+            MBServer.ActiveInstance.SendToAll(message);
         }
     }
 }

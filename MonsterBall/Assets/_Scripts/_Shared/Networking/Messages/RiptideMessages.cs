@@ -5,6 +5,8 @@
     public enum RiptideMessages
     {
         CtsAbilityUsageRequest,
+        StcGameStateUpdated,
+        StcPlayStateUpdated,
         StcMonsterSpawned,
         StcMonsterDespawned,
         StcAbilityUsageResponse,

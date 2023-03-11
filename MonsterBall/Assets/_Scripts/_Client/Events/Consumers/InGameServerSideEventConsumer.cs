@@ -5,17 +5,13 @@ using UnityEngine;
 
 namespace MonsterBall.Client
 {
+    /**
+     * This class is considered a Consumer because it's taking tangible action
+     * based on the messages we're receiving from the server.
+     */
     public static class InGameServerSideEventConsumer
     {
-        [RuntimeInitializeOnLoadMethod]
-        private static void SubscribeToPublishWorthyEvents()
-        {
-            InGameServerSideEventStream.OnMonsterSpawnMessageReceived += HandleMonsterSpawnMessage;
-            InGameServerSideEventStream.OnMonsterDespawnMessageReceived +=
-                HandleMonsterDespawnMessage;
-        }
-
-        private static void HandleMonsterSpawnMessage(
+        public static void HandleMonsterSpawnMessage(
             RiptideMessageData.StcMonsterSpawnedData messageData
         )
         {
@@ -27,7 +23,7 @@ namespace MonsterBall.Client
             );
         }
 
-        private static void HandleMonsterDespawnMessage(
+        public static void HandleMonsterDespawnMessage(
             RiptideMessageData.StcMonsterDespawnedData messageData
         )
         {
@@ -40,6 +36,13 @@ namespace MonsterBall.Client
             }
 
             monster.Despawn();
+        }
+        
+        public static void HandlePlayStateUpdatedMessage(
+            RiptideMessageData.StcPlayStateUpdatedData messageData
+        )
+        {
+            Logger.Log("CLIENT PLAYSTATE UPDATE: " + messageData.PlayState);
         }
     }
 }

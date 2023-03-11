@@ -1,7 +1,21 @@
-﻿namespace MonsterBall.Client.Game
+﻿using UnityEngine;
+
+namespace MonsterBall.Client.Game
 {
-    public class GameState
+    public class GameState : MonoBehaviour
     {
-        public GameState() { }
+        // public PlayStateType PlayState { get; private set; }
+
+        public void Awake()
+        {
+            ClearState();
+        }
+
+        private void ClearState()
+        {
+            
+        }
+        
+        
     }
 }

@@ -157,6 +157,8 @@ MonoBehaviour:
   pfWideReceiverController: {fileID: 0}
   pfTightEndController: {fileID: 0}
   pfLinemanController: {fileID: 0}
+  pfPlayClock: {fileID: 2958269096590146758, guid: 223e4aec66ced49479dcc72a507089aa, type: 3}
+  pfGameClock: {fileID: 439888195011717053, guid: 8dfc0256a5d7d2945993c166075646fc, type: 3}
 --- !u!4 &236718356
 Transform:
   m_ObjectHideFlags: 0

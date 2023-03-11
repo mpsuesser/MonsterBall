@@ -1,5 +1,12 @@
 ﻿namespace MonsterBall.Server
 {
+    /**
+     * PlayStates are intended to be used for setting up the hooks and then
+     * signalling the events that lead to the conclusion of the state.
+     *
+     * They are for visibility and decoupled control. They should _not_ be
+     * micromanaging every detail of the game state.
+     */
     public abstract class PlayState
     {
         public abstract PlayStateType StateType { get; }
@@ -20,5 +27,6 @@
         public int Down { get; protected set; }
 
         public abstract void Begin();
+        public abstract void CleanUp();
     }
 }

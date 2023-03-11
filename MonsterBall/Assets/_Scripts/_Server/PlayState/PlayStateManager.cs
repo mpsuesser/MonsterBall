@@ -14,6 +14,7 @@ namespace MonsterBall.Server
         private void Awake()
         {
             Instance = this;
+            _activePlayState = null;
             
             SubscribeToPlayStateEvents();
         }
@@ -115,9 +116,11 @@ namespace MonsterBall.Server
             // This would be called from the FirstThrow sequence Init() method.
         }
 
-        public void ActivatePlayState(PlayState playState)
+        public void ActivatePlayState(PlayState newPlayState)
         {
-            _activePlayState = playState;
+            _activePlayState?.CleanUp();
+            
+            _activePlayState = newPlayState;
             _activePlayState.Begin();
             
             OnActivePlayStateChanged?.Invoke(_activePlayState);

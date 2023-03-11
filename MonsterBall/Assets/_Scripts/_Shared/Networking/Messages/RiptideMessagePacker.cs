@@ -1,18 +1,48 @@
-﻿using Riptide;
+﻿using System.Collections.Generic;
+using System.Linq;
+using MonsterBall.Server;
+using Riptide;
+using Unity.VisualScripting;
+using UnityEngine;
 
 namespace MonsterBall.Networking
 {
-    public class RiptideMessagePacker
+    public static class RiptideMessagePacker
     {
+        public static Message PackCtsAbilityUsageRequest(
+            AbilityType abilityType,
+            List<Monster> monsters
+        )
+        {
+            List<int> monsterIDs =
+                monsters.Select(monster => monster.EntID).ToList();
+
+            RiptideMessageData.CtsAbilityUsageRequestData data =
+                new()
+                {
+                    AbilityRequested = abilityType,
+                    MonsterIDs = monsterIDs
+                };
+
+            Message message = Message.Create(
+                MessageSendMode.Reliable,
+                (int) RiptideMessages.CtsAbilityUsageRequest
+            );
+            message.AddSerializable(data);
+            return message;
+        }
+        
         public static Message PackStcMonsterSpawned(Monster monster)
         {
+            Transform transform = monster.transform;
+            
             RiptideMessageData.StcMonsterSpawnedData data =
-                new RiptideMessageData.StcMonsterSpawnedData
+                new()
                 {
                     EntityID = monster.EntID,
                     MonsterType = monster.Type,
-                    Position = monster.transform.position,
-                    Rotation = monster.transform.rotation
+                    Position = transform.position,
+                    Rotation = transform.rotation
                 };
 
             Message message = Message.Create(
@@ -26,7 +56,7 @@ namespace MonsterBall.Networking
         public static Message PackStcMonsterDespawned(Monster monster)
         {
             RiptideMessageData.StcMonsterDespawnedData data =
-                new RiptideMessageData.StcMonsterDespawnedData
+                new()
                 {
                     EntityID = monster.EntID
                 };
@@ -39,14 +69,20 @@ namespace MonsterBall.Networking
             return message;
         }
         
-        // TODO: Test that we can use this function ^ and send from C to S
-        
-        public static RiptideMessageData.CtsTestSentenceData UnpackCtsTestSentence(Message message)
+        public static Message PackStcPlayStateUpdated(PlayState playState)
         {
-            RiptideMessageData.CtsTestSentenceData data =
-                message.GetSerializable<RiptideMessageData.CtsTestSentenceData>();
-            
-            return data;
+            RiptideMessageData.StcPlayStateUpdatedData data =
+                new()
+                {
+                    PlayState = playState.StateType
+                };
+
+            Message message = Message.Create(
+                MessageSendMode.Reliable,
+                (int) RiptideMessages.StcPlayStateUpdated
+            );
+            message.AddSerializable(data);
+            return message;
         }
     }
 }

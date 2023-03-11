@@ -23,5 +23,10 @@ namespace MonsterBall.Server
         {
             
         }
+
+        public override void CleanUp()
+        {
+            
+        }
     }
 }

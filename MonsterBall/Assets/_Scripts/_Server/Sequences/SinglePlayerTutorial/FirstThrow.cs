@@ -12,7 +12,9 @@ namespace MonsterBall.Server.Sequences
                 Vector3.zero,
                 Quaternion.identity
             ) as Quarterback;
-            
+
+            PlayStateManager.Instance.StartFresh();
+
             // Give ball
 
             // Eventually...

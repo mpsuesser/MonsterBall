@@ -9,6 +9,8 @@ namespace MonsterBall.Server
         
         public override PlayStateType StateType => PlayStateType.PreSnap;
 
+        private ServerPlayClock _playClock;
+
         public PrePlayState(
             TeamType offensiveTeam,
             int down,
@@ -24,8 +26,26 @@ namespace MonsterBall.Server
 
         public override void Begin()
         {
-            // Initiate play clock, subscribe to run-out event
+            _playClock =
+                ServerPlayClock.Create(Constants.Game.PlayClockSeconds);
+            _playClock.OnPlayClockExpiration += PlayClockExpired;
+            
             // Subscribe to QB Hike event
+        }
+
+        public override void CleanUp()
+        {
+            if (_playClock)
+            {
+                _playClock.Kill();
+            }
+        }
+
+        private void PlayClockExpired()
+        {
+            PrePlayOutcome outcome =
+                new PrePlayOutcome(PrePlayOutcomeType.PlayClockExpired);
+            OnPrePlayStateEnded?.Invoke(this, outcome);
         }
     }
 }

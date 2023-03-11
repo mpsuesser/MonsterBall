@@ -1,6 +1,6 @@
 ﻿namespace MonsterBall.Client
 {
-    public class PreGameServerSideEventStream
+    public class PreGameServerToClientReceiveStream
     {
         
     }

@@ -1,4 +1,4 @@
-﻿namespace MonsterBall.Server
+﻿namespace MonsterBall.Server.Events.Consumers
 {
     public class InGameClientSideEventConsumer
     {

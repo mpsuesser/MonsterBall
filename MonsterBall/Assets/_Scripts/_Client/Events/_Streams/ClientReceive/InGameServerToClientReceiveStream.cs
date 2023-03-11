@@ -5,20 +5,15 @@ using Riptide;
 namespace MonsterBall.Client
 {
     /**
-     * This class is used as a consumer for in-game server-side events.
+     * This class is used as a stream of in-game server-to-client messages.
      *
      * Examples would include:
      *  - "Entity X has moved to location Y"
      *  - "Entity X has despawned"
      *  - "The game state has updated to state Y"
      */
-    public static class InGameServerSideEventStream
+    public static class InGameServerToClientReceiveStream
     {
-        public static event Action<RiptideMessageData.StcMonsterSpawnedData>
-            OnMonsterSpawnMessageReceived;
-        public static event Action<RiptideMessageData.StcMonsterDespawnedData>
-            OnMonsterDespawnMessageReceived;
-    
         [MessageHandler((ushort) RiptideMessages.StcMonsterSpawned)]
         public static void MonsterSpawned(Message message)
         {
@@ -26,7 +21,7 @@ namespace MonsterBall.Client
                 message
                     .GetSerializable<RiptideMessageData.StcMonsterSpawnedData>();
         
-            OnMonsterSpawnMessageReceived?.Invoke(data);
+            InGameServerSideEventConsumer.HandleMonsterSpawnMessage(data);
         }
 
         [MessageHandler((ushort) RiptideMessages.StcMonsterDespawned)]
@@ -37,7 +32,18 @@ namespace MonsterBall.Client
                     .GetSerializable<
                         RiptideMessageData.StcMonsterDespawnedData>();
 
-            OnMonsterDespawnMessageReceived?.Invoke(data);
+            InGameServerSideEventConsumer.HandleMonsterDespawnMessage(data);
+        }
+        
+        [MessageHandler((ushort) RiptideMessages.StcPlayStateUpdated)]
+        public static void PlayStateUpdated(Message message)
+        {
+            RiptideMessageData.StcPlayStateUpdatedData data =
+                message
+                    .GetSerializable<
+                        RiptideMessageData.StcPlayStateUpdatedData>();
+
+            InGameServerSideEventConsumer.HandlePlayStateUpdatedMessage(data);
         }
     }
 }

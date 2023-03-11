@@ -1,6 +1,6 @@
 ﻿namespace MonsterBall.Server
 {
-    public class LobbyClientSideEventConsumer
+    public class LobbyClientToServerReceiveStream
     {
         
     }
